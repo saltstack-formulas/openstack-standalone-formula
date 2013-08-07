@@ -1,13 +1,9 @@
-{% if grains['os_family'] == 'RedHat' %}
-  {% set horizon_pkg = 'openstack-dashboard' %}
-{% endif %}
-
 include:
   - apache
 
 horizon:
   pkg.installed:
-    - name: {{ horizon_pkg }}
+    - name: openstack-dashboard
     - watch_in:
       - service: apache
 
@@ -15,3 +11,5 @@ horizon:
   file.managed:
     - source: salt://openstack/horizon/files/local_settings
     - template: jinja
+    - require:
+      - pkg: horizon
