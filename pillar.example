@@ -1,0 +1,4 @@
+glance:
+  cache:
+    verbose: True
+    debug: False
