@@ -1,4 +1,4 @@
 include:
   - openstack.nova
-  - openstack.glace
+  - openstack.glance
   - openstack.keystone
