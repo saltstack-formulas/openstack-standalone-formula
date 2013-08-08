@@ -46,7 +46,8 @@ nova-services:
 /etc/nova:
   file:
     - recurse
-    - source: salt://openstack/nova
+    - source: salt://openstack/nova/files
+    - template: jinja
     - require:
       - pkg: openstack-nova
     - watch_in:

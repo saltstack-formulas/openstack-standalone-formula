@@ -22,6 +22,7 @@ openstack-keystone:
 /etc/keystone:
   file:
     - recurse
-    - source: salt://openstack/keystone
+    - source: salt://openstack/keystone/files
+    - template: jinja
     - require:
       - pkg: openstack-keystone

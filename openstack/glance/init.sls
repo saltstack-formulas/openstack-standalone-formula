@@ -30,7 +30,7 @@ glance-services:
 /etc/glance:
   file:
     - recurse
-    - source: salt://openstack/glance
+    - source: salt://openstack/glance/files
     - template: jinja
     - require:
       - pkg: openstack-glance
