@@ -8,7 +8,7 @@ openstack-nova:
     - repo: epel-testing
 
 nova-support:
-  service
+  service:
     - running
     - enable: True
     - names:
