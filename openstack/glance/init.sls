@@ -12,7 +12,7 @@ glance-db-init:
     - unless: echo '' | mysql glance
     - require:
       - pkg: openstack-glance
-     - service: mysqld
+      - service: mysqld
 
 glance-services:
   service:
