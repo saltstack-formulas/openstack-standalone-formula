@@ -18,7 +18,7 @@ glance-services:
   service:
     - running
     - enable: True
-    - pkgs:
+    - names:
       - openstack-glance-api
       - openstack-glance-registry
     - require:
