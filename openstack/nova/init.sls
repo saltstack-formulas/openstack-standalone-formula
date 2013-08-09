@@ -8,7 +8,6 @@ include:
 openstack-nova:
   pkg:
     - installed
-    - repo: epel-testing
 
 nova-support:
   service:
