@@ -44,7 +44,7 @@ nova-services:
     - watch:
       - cmd: nova-db-init
       - cmd: keystone-db-init
-      - service: openstack-glance-api
+      - service: glance-services
 
 /etc/nova:
   file:
