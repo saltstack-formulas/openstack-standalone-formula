@@ -1,6 +1,6 @@
 include:
   - epel
-  - mysql
+  - mysql.server
 
 openstack-nova:
   pkg:
