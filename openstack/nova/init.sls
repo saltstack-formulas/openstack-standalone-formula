@@ -1,6 +1,9 @@
 include:
   - epel
   - mysql.server
+  - qpid.server
+  - openstack.keystone
+  - openstack.glance
 
 openstack-nova:
   pkg:
