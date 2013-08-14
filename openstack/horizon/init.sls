@@ -30,12 +30,4 @@ horizon-config:
   file:
     - managed
     - name: {{ pkg.wsgi_conf }}
-    - contents: |
-        WSGIScriptAlias / /usr/share/openstack-dashboard/openstack_dashboard/wsgi/django.wsgi
-        WSGIDaemonProcess horizon user=www-data group=www-data processes=3 threads=10
-        Alias /static /usr/share/openstack-dashboard/openstack_dashboard/static/
-
-        <Directory /usr/share/openstack-dashboard/openstack_dashboard/wsgi>
-          Order allow,deny
-          Allow from all
-        </Directory>
+    - source: salt://openstack/horizon/files/openstack-dashboard.conf

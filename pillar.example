@@ -2,3 +2,9 @@ glance:
   cache:
     verbose: True
     debug: False
+
+horizon:
+  servername: openstack.example.com
+  use_ssl: False
+  ssl_crt: /etc/apache2/SSL/openstack.example.com.crt
+  ssl_key: /etc/apache2/SSL/openstack.example.com.key
