@@ -25,6 +25,8 @@ horizon:
     - template: jinja
     - require:
       - pkg: horizon
+    - watch_in:
+      - service: apache
 
 horizon-config:
   file:
@@ -32,3 +34,7 @@ horizon-config:
     - name: {{ pkg.wsgi_conf }}
     - source: salt://openstack/horizon/files/openstack-dashboard.conf
     - template: jinja
+    - require:
+      - pkg: horizon
+    - watch_in:
+      - service: apache
