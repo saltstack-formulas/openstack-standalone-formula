@@ -1,5 +1,5 @@
 include:
-  - mysql.service
+  - mysql.server
 
 openstack-glance:
   pkg:
