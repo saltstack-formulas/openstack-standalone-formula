@@ -1,6 +1,5 @@
 keystone-db-init:
-  cmd:
-    - run
+  cmd.run:
     - name: openstack-db --init --service keystone --rootpw ''
     - unless: echo '' | mysql keystone
     - require:
@@ -8,20 +7,17 @@ keystone-db-init:
       - service: mysqld
 
 openstack-keystone:
-  service:
-    - running
+  service.running:
     - enable: True
     - require:
       - pkg: openstack-keystone
     - watch:
       - cmd: keystone-db-init
       - file: /etc/keystone
-  pkg:
-    - installed
+  pkg.installed: []
 
 /etc/keystone:
-  file:
-    - recurse
+  file.recurse:
     - source: salt://openstack/keystone/files
     - template: jinja
     - require:
