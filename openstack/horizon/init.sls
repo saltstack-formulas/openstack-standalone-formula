@@ -29,8 +29,7 @@ horizon:
       - service: apache
 
 horizon-config:
-  file:
-    - managed
+  file.managed:
     - name: {{ pkg.wsgi_conf }}
     - source: salt://openstack/horizon/files/openstack-dashboard.conf
     - template: jinja

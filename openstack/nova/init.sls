@@ -6,12 +6,10 @@ include:
   - openstack.glance
 
 openstack-nova:
-  pkg:
-    - installed
+  pkg.installed: []
 
 nova-support:
-  service:
-    - running
+  service.running:
     - enable: True
     - names:
       - mysqld
@@ -20,8 +18,7 @@ nova-support:
       - messagebus
 
 nova-db-init:
-  cmd:
-    - run
+  cmd.run:
     - name: openstack-db --init --service nova --rootpw ''
     - unless: echo '' | mysql nova
     - require:
@@ -29,8 +26,7 @@ nova-db-init:
       - service: mysqld
 
 nova-services:
-  service:
-    - running
+  service.running:
     - enable: True
     - names:
       - openstack-nova-api
@@ -46,8 +42,7 @@ nova-services:
       - service: glance-services
 
 /etc/nova:
-  file:
-    - recurse
+  file.recurse:
     - source: salt://openstack/nova/files
     - template: jinja
     - require:
