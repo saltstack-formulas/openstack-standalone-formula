@@ -19,8 +19,10 @@ Available states
     Installs Glance
 ``openstack.keystone``
     Installs Keystone
+``openstack.cinder``
+    Installs Cinder
 
-These formulas depend on the following formulas:
+These states depend on the following formulas:
 
 * `apache <https://github.com/saltstack-formulas/apache-formula>`_
 * `avahi <https://github.com/saltstack-formulas/avahi-formula>`_
